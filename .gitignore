@@ -1,0 +1,4 @@
+/mountain_car_sarsa_dir/mountain_car_sarsa/*
+/mountain_car_sarsalambda_dir/mountain_car_sarsalambda/*
+/mountain_car_sarsamax_dir/mountain_car_sarsamax/*
+/stable_dqn/dqn_mountain_car/*

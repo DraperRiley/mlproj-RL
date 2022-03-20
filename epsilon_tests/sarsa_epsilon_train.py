@@ -65,10 +65,11 @@ def main():
         mean_rewards[r] = np.mean(scores[max(0, r-50):(r+1)])
 
     plt.plot(episodes, mean_rewards, label='EXPONENTIAL')
+    np.save('exponential_epsilon_mean.npy', mean_rewards)
 
     plt.xlabel('Episode')
     plt.ylabel('Total reward')
-    plt.title('Total reward over ' + str(len(episodes)) + ' episodes')
+    plt.title('Total reward over ' + str(len(episodes)) + ' episodes using SARSA')
 
     # Step decay
     q_table = np.zeros((18, 14, 3))
@@ -117,6 +118,7 @@ def main():
         mean_rewards[r] = np.mean(scores[max(0, r-50):(r+1)])
 
     plt.plot(episodes, mean_rewards, label='STEP')
+    np.save('step_epsilon_mean.npy', mean_rewards)
 
     # Static epsilon
     q_table = np.zeros((18, 14, 3))
@@ -162,6 +164,7 @@ def main():
         mean_rewards[r] = np.mean(scores[max(0, r-50):(r+1)])
 
     plt.plot(episodes, mean_rewards, label='STATIC')
+    np.save('static_epsilon_mean.npy', mean_rewards)
     plt.legend()
     plt.savefig('mountain_car_sarsa_varying_epsilon')
 

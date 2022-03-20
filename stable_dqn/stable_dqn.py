@@ -15,7 +15,7 @@ def main():
     except:
         model = DQN('MlpPolicy', env, verbose=1, tensorboard_log='./dqn_mountain_car')
 
-    model.learn(total_timesteps=1000000)
+    model.learn(total_timesteps=10000000)
 
     done = False
 

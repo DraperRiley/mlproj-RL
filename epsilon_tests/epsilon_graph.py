@@ -12,6 +12,7 @@ env._max_episode_steps = 1000
 
 def main():
 
+    #HYPERPARAMS
     epsilon = 0.9
     epsilon_val = []
     episodes = []
@@ -30,7 +31,7 @@ def main():
         episodes.append(episode + 1)
         epsilon_val.append(epsilon)
 
-    plt.plot(episodes, epsilon_val, label='EXPONENTIAL')
+    plt.plot(episodes, epsilon_val, label='EXPONENTIAL')  # Plot exponential decay
 
     # Step decay
     epsilon = 0.9
@@ -42,7 +43,7 @@ def main():
         episodes.append(episode + 1)
         epsilon_val.append(epsilon)
 
-    plt.plot(episodes, epsilon_val, label='STEP')
+    plt.plot(episodes, epsilon_val, label='STEP')  # Plot step decay
 
     # Static epsilon
     epsilon = 0.2
@@ -52,7 +53,7 @@ def main():
         episodes.append(episode + 1)
         epsilon_val.append(epsilon)
 
-    plt.plot(episodes, epsilon_val, label='STATIC')
+    plt.plot(episodes, epsilon_val, label='STATIC')  # Plot static epsilon
 
     plt.legend()
     plt.xlabel('Episode')

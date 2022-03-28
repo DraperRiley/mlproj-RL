@@ -10,6 +10,10 @@ env._max_episode_steps = 1000
 
 def main():
 
+    """
+    Test various methods of epsilon decay using SARSA
+    """
+
     # PARAMS
     alpha = 0.1  # Learning rate
     gamma = 0.99  # Discount factor
@@ -171,6 +175,7 @@ def main():
     return 0
 
 
+# Make state discrete
 def discrete_state(val1, val2):
 
     result_x = round(val1, 1)
@@ -182,6 +187,7 @@ def discrete_state(val1, val2):
     return int(result_x), int(result_y)
 
 
+# Predict an action using epsilon greedy
 def predict(statex, statey, q_table, epsilon):
     if np.random.binomial(1, epsilon, 1) == 1:
         return env.action_space.sample()

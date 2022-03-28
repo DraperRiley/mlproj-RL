@@ -16,6 +16,7 @@ epsilon = epsilon*0.9 performs okay
 
 def main():
 
+    # Load model
     q_table = np.load('./mountain_car_sarsa/mountain_car_sarsa_10000_episodes.npy')
     #print(q_table)
 
@@ -23,6 +24,7 @@ def main():
     total_score = 0
     num_eps = 100
 
+    # Run n eps and record total score per episode
     for i in range(num_eps):
         obs = env.reset()
         done = False
@@ -36,6 +38,7 @@ def main():
             score += reward
         total_score += score
 
+    # Get average
     avg_reward = total_score / num_eps
 
     print('Average reward {f}'.format(f=avg_reward))

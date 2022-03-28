@@ -72,9 +72,11 @@ def main():
 
         #epsilon = max(min_epsilon, np.exp(-decreasing_decay*episode))
 
+        # Epsilon step decay
         if (episode + 1) % 20 == 0:
             epsilon *= decay
 
+        # Save model every 100 steps
         if (episode + 1) % 100 == 0:
             np.save('./mountain_car_sarsa/mountain_car_sarsa_{f}_episodes.npy'.format(f=str(len(episodes))), q_table)
             num_eps = episode + 1

@@ -1,13 +1,13 @@
 # Reinforcement Learning
 
 The following details the process of training a model to tackle the
-mountain car problem as described in Sutton & Barto's book *Reinforcement Learning*.
+mountain car problem as described in Sutton & Barto's book *Reinforcement Learning* [[1]](#1).
 
 <br></br>
 
 # The Mountain Car Problem
 
-The problem begins with a car positioned deep within a valley. The goal is to reach the top of the hill to the right, however, the car's engine is not powerful enough to drive up the hill. Therefore, the car must use the hill to its left in order to gain enough momentum to reach the rightmost hill.
+The problem begins with a car positioned deep within a valley. The goal is to reach the top of the hill to the right, however, the car's engine is not powerful enough to drive up the hill. Therefore, the car must use the hill to its left in order to gain enough momentum to reach the rightmost hill [[1]](#1).
 
 <br></br>
 
@@ -37,6 +37,10 @@ This project uses SARSA, Q-Learning(SARSAMAX), and SARSALAMBDA as described in S
 
 # Results
 
+<br>
+
+## Hypothesis 1
+
 ![img](learning_results.png)
 
 | Algorithm | Mean | Std. Dev. |
@@ -45,8 +49,25 @@ This project uses SARSA, Q-Learning(SARSAMAX), and SARSALAMBDA as described in S
 | SARSALAMBDA | -191.2 | 136   |
 | Q-Learning | -276.7 | 178.9  |
 
-In the above image we can see that SARSALAMBDA achieves the greatest average reward over 10,000 episodes. 
+Using the above image and table we can see that SARSALAMBDA achieves the greatest average reward over 10,000 episodes with an average of -191.2.
 
 <br></br>
 
+## Hypothesis 2
+
 ![img](/epsilon_tests/mountain_car_sarsa_varying_epsilon.png)
+
+| Method    | Mean | Std. Dev. |
+| --------- | :--: | :-------: |
+| EXPONENTIAL | -221 | 154.1   |
+| STEP      | -245.1 | 187.9   |
+| STATIC    | -237.9 | 78.7    |
+
+In the above we can see that SARSA combined with exponential epsilon decay achieves the greatest average reward over 10,000 episodes.
+
+<br></br>
+
+# References
+
+<a id='1'>[1]</a>
+Sutton, R. S. and Barto, A. G. (eds.). *Reinforcement Learning: An Introduction.* A Bradford Book, Cambridge, MA, USA, 2018.
